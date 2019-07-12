@@ -7,7 +7,7 @@
                         <nuxt-link active-class="is-active" :to="{path: '//'+item.bannerUrl}"
                                    class="bk1"
                                    style="display:block;height: 100%;width: 100%;" exact>
-                            <img :src="'http://img.meetingshop.cn/'+item.bannerAddress" alt="">
+                            <img :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.bannerAddress" alt="">
                         </nuxt-link>
                     </div>
                 </div>

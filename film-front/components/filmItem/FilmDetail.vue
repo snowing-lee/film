@@ -37,7 +37,7 @@
                                         <li class="celebrity ">
                                             <a href="javascript:;" target="_blank" class="portrait">
                                                 <img class="default-img"
-                                                     :src=filmItem.imgPre+filmItem.data.info04.actors.director.imgAddress>
+                                                 :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+filmItem.data.info04.actors.director.imgAddress">
                                             </a>
                                             <div class="info">
                                                 <a href="javascript:;" target="_blank" class="name">
@@ -58,7 +58,7 @@
                                         <li class="celebrity actor"
                                             v-for="(item, index) in filmItem.data.info04.actors.actors" :key="index">
                                             <a href="/films/celebrity/467008" target="_blank" class="portrait">
-                                                <img class="default-img" :src=filmItem.imgPre+item.imgAddress>
+                                                <img class="default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.imgAddress">
                                             </a>
                                             <div class="info">
                                                 <a href="/films/celebrity/467008" target="_blank" class="name">
@@ -83,15 +83,15 @@
                         <div class="mod-content">
                             <div class="album clearfix" data-act="movie-img-click">
                                 <div class="img1"><img class="default-img" alt=""
-                                                       :src="filmItem.imgPre+filmItem.data.info04.imgVO.mainImg"></div>
+                                                       :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+filmItem.data.info04.imgVO.mainImg"></div>
                                 <div class="img2"><img class="default-img" alt=""
-                                                       :src="filmItem.imgPre+filmItem.data.info04.imgVO.img01"></div>
+                                                       :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+filmItem.data.info04.imgVO.img01"></div>
                                 <div class="img3"><img class="default-img" alt=""
-                                                       :src="filmItem.imgPre+filmItem.data.info04.imgVO.img02"></div>
+                                                       :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+filmItem.data.info04.imgVO.img02"></div>
                                 <div class="img4"><img class="default-img" alt=""
-                                                       :src="filmItem.imgPre+filmItem.data.info04.imgVO.img03"></div>
+                                                       :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+filmItem.data.info04.imgVO.img03"></div>
                                 <div class="img5"><img class="default-img" alt=""
-                                                       :src="filmItem.imgPre+filmItem.data.info04.imgVO.img04"></div>
+                                                       :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+filmItem.data.info04.imgVO.img04"></div>
                             </div>
 
                         </div>

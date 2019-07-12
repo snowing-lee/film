@@ -3,7 +3,7 @@
         {{fieldInfo}}
         <div class="movie-info clearfix">
             <div class="poster">
-                <img :src="fieldInfo.imgPre + fieldInfo.data.filmInfo.imgAddress">
+                <img :src="'https://project4.oss-cn-beijing.aliyuncs.com/' + fieldInfo.data.filmInfo.imgAddress">
             </div>
             <div class="content">
                 <p class="name text-ellipsis">{{fieldInfo.data.filmInfo.filmName}}</p>

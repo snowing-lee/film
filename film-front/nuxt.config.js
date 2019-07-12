@@ -64,8 +64,9 @@ module.exports = {
     },
     env: {
         // baseUrl: 'https://www.easy-mock.com/mock/5b52fdd00a35bc5c5ece0613/film' || 'http://localhost:3000'
-           baseUrl: '//www.meetingshop.cn'
-            //   baseUrl: 'http://192.168.5.71:80' 
+        //    baseUrl: '//www.meetingshop.cn'
+              baseUrl: 'http://192.168.2.100:80'
+        //       baseUrl: 'http://192.168.2.100:80'
 	},
     proxyTable: [
         '~/api'

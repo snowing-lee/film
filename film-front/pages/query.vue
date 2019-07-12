@@ -32,8 +32,8 @@
             <div class="movie-item">
               <nuxt-link :to="{path:'/filmItem/'+item.filmId}" target="_blank">
                 <div class="movie-poster">
-                  <img class="poster-default" :src="$store.state.filmList.imgPre+item.imgAddress">
-                  <img :src="$store.state.filmList.imgPre+item.imgAddress">
+                  <img class="poster-default" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.imgAddress">
+                  <img :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.imgAddress">
                 </div>
               </nuxt-link>
               <div class="movie-ver"></div>

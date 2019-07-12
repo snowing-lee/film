@@ -3,7 +3,7 @@
         <div class="wrapper clearfix" v-if="filmItem && filmItem.data">
             <div class="celeInfo-left">
                 <div class="avatar-shadow">
-                    <img class="avatar" :src="filmItem.imgPre + filmItem.data.imgAddress" alt="">
+                    <img class="avatar" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+ filmItem.data.imgAddress" alt="">
                     <div class="movie-ver"></div>
                 </div>
             </div>
