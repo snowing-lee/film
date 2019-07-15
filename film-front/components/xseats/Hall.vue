@@ -46,7 +46,7 @@
                          v-if="$store.state.seatInfo.seatCharts.couple && $store.state.seatInfo.seatCharts.couple.length > 0"
                          v-for="(items, rowIndex) in $store.state.seatInfo.seatCharts.couple"
                          :key="rowIndex">
-            <span :class="(columnIndex % 2 == 0) ?
+            <span :class="item.isSold == true ? 'seat  sold' :(columnIndex % 2 == 0) ?
                   item.selected == true ? 'seat lover lover-left selected' : 'seat lover lover-left selectable':
                   item.selected == true ? 'seat lover lover-right selected' : 'seat lover lover-right selectable'"
                   v-for="(item, columnIndex) in items"
@@ -124,6 +124,9 @@
              * */
             selectCoupleSeat(rowIndex, columnIndex, seatId, items, limit) {
                 let params = {};
+                if (items[columnIndex].isSold == true) {
+                    return false;
+                }
                 // 给当前选中的元素设置样式
                 this.setSelectedFlag(items[columnIndex], limit);
                 // 如果当前选中的元素为偶数项，在该项的后一项添加高亮状态，
