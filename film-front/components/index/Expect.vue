@@ -17,49 +17,51 @@
 
                     <li class="ranking-item ranking-top ranking-index-1">
                         <a href="">
-                            <div class="ranking-top-left">
-                                <i class="ranking-top-icon"></i>
-                                <img class="ranking-img  default-img"
-                                     src="http://img.meetingshop.cn/films/imgs/ee2e68492504b2390ce246f1e8e6d8ba1550779.jpg">
-                            </div>
-                            <div class="ranking-top-right">
-                                <div class="ranking-top-right-main">
-                                    <span class="ranking-top-moive-name">Redux数据流</span>
-                                    <p class="ranking-release-time">上映时间：2018-06-15</p>
-                                    <p class="ranking-top-wish">
-                                        <span class="stonefont">451999</span>人想看
-                                    </p>
+                            <nuxt-link :to="{path:'/filmItem/'+top1.filmId}">
+                                <div class="ranking-top-left">
+                                    <i class="ranking-top-icon"></i>
+                                    <img class="ranking-img  default-img"
+                                         :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+top1.imgAddress">
                                 </div>
-                            </div>
+                                <div class="ranking-top-right">
+                                    <div class="ranking-top-right-main">
+                                        <span class="ranking-top-moive-name">{{top1.filmName}}</span>
+                                        <p class="ranking-release-time">上映时间：{{top1.showTime}}</p>
+                                        <p class="ranking-top-wish">
+                                            <span class="stonefont">{{top1.boxNum}}</span>人想看
+                                        </p>
+                                    </div>
+                                </div>
+                            </nuxt-link>
                         </a>
                     </li>
                     <li class="ranking-item ranking-index-2">
-                        <a href="/filmItem/1175253" target="_blank" data-act="mostExpect-movie-click"
-                           data-val="{movieid:1175253}">
-                            <i class="ranking-index" style="color: #fff!important">2</i>
-
-                            <span class="img-link">
-                <img class="ranking-img default-img"
-                     src="http://img.meetingshop.cn/films/imgs/710ae6c9176a9e543cc3f4142aaa8889292327.jpg">
-              </span>
-                            <div class="name-link ranking-movie-name">游戏测试入门</div>
-
-                            <span class="ranking-num-info">
-                <span class="stonefont">219176</span>人想看</span>
+                        <a href="/filmItem/1175253" target="_blank" data-act="mostExpect-movie-click" data-val="{movieid:1175253}">
+                            <nuxt-link :to="{path:'/filmItem/'+top2.filmId}">
+                                <i class="ranking-index" style="color: #fff!important">2</i>
+                                <span class="img-link">
+                                    <img class="ranking-img default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+top2.imgAddress">
+                                </span>
+                                <div class="name-link ranking-movie-name">{{top2.filmName}}</div>
+                                <span class="ranking-num-info">
+                                    <span class="stonefont">{{top2.boxNum}}</span>人想看
+                                </span>
+                            </nuxt-link>
                         </a>
                     </li>
                     <li class="ranking-item ranking-index-3">
-                        <a href="/filmItem/341516" target="_blank" data-act="mostExpect-movie-click"
-                           data-val="{movieid:341516}">
-                            <i class="ranking-index" style="color: #fff!important">3</i>
-                            <span class="img-link">
-                <img class="ranking-img default-img"
-                     src="http://img.meetingshop.cn/films/imgs/2de435d9c1b2f1074c1e4c7da49b64a54338855.jpg">
-              </span>
-                            <div class="name-link ranking-movie-name">Android打包</div>
+                        <a href="/filmItem/341516" target="_blank" data-act="mostExpect-movie-click" data-val="{movieid:341516}">
+                            <nuxt-link :to="{path:'/filmItem/'+top3.filmId}">
+                                <i class="ranking-index" style="color: #fff!important">3</i>
+                                <span class="img-link">
+                                    <img class="ranking-img default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+top3.imgAddress">
+                                </span>
+                                <div class="name-link ranking-movie-name">{{top3.filmName}}</div>
 
-                            <span class="ranking-num-info">
-                <span class="stonefont">185156</span>人想看</span>
+                                <span class="ranking-num-info">
+                                      <span class="stonefont">{{top3.boxNum}}</span>人想看
+                                </span>
+                            </nuxt-link>
                         </a>
                     </li>
                     <li class="ranking-item" :class="'ranking-index-'+(index+4)" v-for="(movie,index) in expectRanking"
@@ -83,10 +85,41 @@
     export default {
         name: 'Except',
         props: {
-            expectRanking: {}
+            expectRanking: Array
         },
         data() {
-            return {}
+            return {
+                top1: {
+                    imgAddress: "",
+                    filmName: "",
+                    boxNum: "",
+                    showTime: "",
+                },
+                top2: {
+                    imgAddress: "",
+                    filmName: "",
+                    boxNum: "",
+                },
+                top3: {
+                    imgAddress: "",
+                    filmName: "",
+                    boxNum: "",
+                },
+            }
+        },
+        created() {
+            if (this.expectRanking.length>0){
+                this.top1=this.expectRanking[0];
+                this.expectRanking.shift();
+            }
+            if (this.expectRanking.length>0){
+                this.top2=this.expectRanking[0];
+                this.expectRanking.shift();
+            }
+            if (this.expectRanking.length>0){
+                this.top3=this.expectRanking[0];
+                this.expectRanking.shift();
+            }
         }
     }
 </script>

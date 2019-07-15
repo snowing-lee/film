@@ -17,18 +17,20 @@
                 <ul class="ranking-wrapper ranking-box">
                     <li class="ranking-item ranking-top ranking-index-1">
                         <a href="" data-act="ticketList-movie-click">
-                            <div class="ranking-top-left">
-                                <i class="ranking-top-icon"></i>
-                                <img class="ranking-img  default-img" :src="top.img">
-                            </div>
-                            <div class="ranking-top-right">
-                                <div class="ranking-top-right-main">
-                                    <span class="ranking-top-moive-name">{{top.name}}</span>
-                                    <p class="ranking-top-wish">
-                                        <span class="stonefont">{{top.num}}</span>分
-                                    </p>
+                            <nuxt-link :to="{path:'/filmItem/'+top.filmId}">
+                                <div class="ranking-top-left">
+                                    <i class="ranking-top-icon"></i>
+                                    <img class="ranking-img  default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+top.imgAddress">
                                 </div>
-                            </div>
+                                <div class="ranking-top-right">
+                                    <div class="ranking-top-right-main">
+                                        <span class="ranking-top-moive-name">{{top.filmName}}</span>
+                                        <p class="ranking-top-wish">
+                                            <span class="stonefont">{{top.score}}</span>分
+                                        </p>
+                                    </div>
+                                </div>
+                            </nuxt-link>
                         </a>
                     </li>
                     <li class="ranking-item" :class="'ranking-index-'+(index+2)" v-for="(movie,index) in top100"
@@ -52,15 +54,21 @@
     export default {
         name: 'Top100',
         props: {
-            top100: {}
+            top100: Array
         },
         data() {
             return {
                 top: {
-                    num: 9.6,
-                    name: 'web端功能自动化定位元素',
-                    img: 'http://img.meetingshop.cn/films/imgs/99496f80b15d064152f20bec9287f2e0967981.jpg'
+                    score: 9.6,
+                    filmName: '敬请期待',
+                    imgAddress: ''
                 }
+            }
+        },
+        created() {
+            if (this.top100.length>0){
+                this.top=this.top100[0];
+                this.top100.shift();
             }
         }
     }

@@ -10,18 +10,20 @@
                 <ul class="ranking-wrapper ranking-box">
                     <li class="ranking-item ranking-top ranking-index-1">
                         <a href="" data-act="ticketList-movie-click">
-                            <div class="ranking-top-left">
-                                <i class="ranking-top-icon"></i>
-                                <img class="ranking-img  default-img" :src="top.img">
-                            </div>
-                            <div class="ranking-top-right">
-                                <div class="ranking-top-right-main">
-                                    <span class="ranking-top-moive-name">{{top.name}}</span>
-                                    <p class="ranking-top-wish">
-                                        <span class="stonefont">{{top.num}}</span>万
-                                    </p>
+                            <nuxt-link :to="{path:'/filmItem/'+top.filmId}" target="_blank">
+                                <div class="ranking-top-left">
+                                    <i class="ranking-top-icon"></i>
+                                    <img class="ranking-img  default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+top.imgAddress">
                                 </div>
-                            </div>
+                                <div class="ranking-top-right">
+                                    <div class="ranking-top-right-main">
+                                        <span class="ranking-top-moive-name">{{top.filmName}}</span>
+                                        <p class="ranking-top-wish">
+                                            <span class="stonefont">{{top.boxNum}}</span>万
+                                        </p>
+                                    </div>
+                                </div>
+                            </nuxt-link>
                         </a>
                     </li>
                     <li class="ranking-item" :class="'ranking-index-'+(index+2)" v-for="(movie,index) in boxRanking"
@@ -45,16 +47,23 @@
     export default {
         name: 'Today',
         props: {
-            boxRanking: {}
+            boxRanking: Array
         },
         data() {
             return {
                 top: {
-                    num: 1040.57,
-                    name: 'R语言入门与进阶',
-                    img: 'http://img.meetingshop.cn/films/index/dx.jpg'
-
+                    imgAddress: "",
+                    filmName: "",
+                    boxNum: "",
                 },
+            }
+        },
+        created() {
+            if (this.boxRanking.length>0){
+                this.top=this.boxRanking[0];
+                this.boxRanking.shift();
+            }else {
+
             }
         }
 
