@@ -76,7 +76,7 @@
             <div class="order-pay">
                 <div class="pay-btn" @click="confirmOrder">扫码支付</div>
                 <a href="javascript:;" class="qrcode" v-show="showQrcode">
-                    <img :src=qrcodeImg alt="">
+                    <img :src=qrcodeImg1 alt="">
                 </a>
             </div>
         </div>
@@ -122,6 +122,18 @@
                 qrcodeImg: '',
             }
         },
+        computed: {
+            //  访问服务外的图片文件(该写法可换为oss存储,或者访问后台服务器)
+            qrcodeImg1: function () {
+                var  qrcodeImg1 = '';
+                if (this.qrcodeImg == ''){
+                }else {
+                    var  qr = this.qrcodeImg.split('/')
+                    qrcodeImg1 = qr[qr.length-1]
+                }
+                return '/pic/'+qrcodeImg1
+            }
+        },
         mounted () {
             this.getSeatList();
         },
@@ -140,7 +152,7 @@
                     if (res) {
                         if (res.status == 0) {
                             _this.showQrcode = true;
-                            _this.qrcodeImg = res.imgPre + res.data.qRCodeAddress;
+                            _this.qrcodeImg =  res.data.qRCodeAddress;
                             _this.tryNums++;
                             if (_this.qrcodeImg) {
                                 clearTimeout(timer);
@@ -363,6 +375,7 @@
             }
             .order-pay {
                 position: relative;
+                height: 180px;
                 .pay-btn {
                     cursor: pointer;
                     display: inline-block;
@@ -383,6 +396,7 @@
                 }
                 .qrcode {
                     position: absolute;
+                    top: 49px;
                     right: 20px;
                     bottom: 44px;
                     img {
