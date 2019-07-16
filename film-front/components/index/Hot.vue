@@ -18,7 +18,9 @@
                         <nuxt-link :to="{path:'/filmItem/'+item.filmId}" target="_blank">
                             <div class="movie-poster">
                                 <img class="poster-default" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.imgAddress">
-                                <img :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.imgAddress">
+                                <div class="movie-div">
+                                    <img class="movie-item-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.imgAddress">
+                                </div>
                                 <div class="movie-overlay movie-overlay-bg">
                                     <div class="movie-info">
                                         <div class="movie-score">
@@ -125,10 +127,11 @@
                             .movie-poster {
                                 background-color: #fcfcfc;
                                 width: 160px;
-                                height: 180px;
+                                height: 260px;
                                 overflow: hidden;
                                 position: relative;
                                 .poster-default {
+                                    position: absolute;
                                     top: 50%;
                                     left: 50%;
                                     width: 68px;
@@ -137,11 +140,19 @@
                                     margin-left: -34px;
                                     opacity: 0;
                                 }
+                                .movie-div {
+                                    width: 100%;
+                                    height: 224px;
+                                    .movie-item-img {
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                }
                                 .movie-overlay {
                                     .movie-info {
                                         color: #666;
                                         position: absolute;
-                                        bottom: 7px;
+                                        bottom: 2px;
                                         width: 100%;
                                         .movie-score {
                                             color: #ffb400;
@@ -171,7 +182,7 @@
                                         }
                                     }
                                 }
-                                .movie-overlay, img {
+                                .movie-overlay{
                                     position: absolute;
                                     top: 0;
                                     left: 0;
