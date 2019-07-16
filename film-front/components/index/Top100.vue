@@ -20,7 +20,9 @@
                             <nuxt-link :to="{path:'/filmItem/'+top.filmId}">
                                 <div class="ranking-top-left">
                                     <i class="ranking-top-icon"></i>
-                                    <img class="ranking-img  default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+top.imgAddress">
+                                    <div class="ranking-div">
+                                        <img class="ranking-img  default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+top.imgAddress">
+                                    </div>
                                 </div>
                                 <div class="ranking-top-right">
                                     <div class="ranking-top-right-main">
@@ -144,10 +146,14 @@
                                 overflow: hidden;
                                 float: left;
                                 position: relative;
-                                /*.ranking-img {*/
-                                /*width: 100%;*/
-                                /*height: 100%;*/
-                                /*}*/
+                                .ranking-div {
+                                    width: 120px;
+                                    height: 78px;
+                                    .ranking-img {
+                                    width: 100%;
+                                    height: 100%;
+                                    }
+                                }
                             }
                             .ranking-top-right {
                                 height: 78px;
