@@ -36,7 +36,7 @@
             return {}
         },
         computed: {},
-        mounted() {
+        updated() {
             var mySwiper = new Swiper('.swiper-container', {
                 autoplay: true,
                 effect: 'fade',
