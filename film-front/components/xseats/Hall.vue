@@ -46,7 +46,7 @@
                          v-if="$store.state.seatInfo.seatCharts.couple && $store.state.seatInfo.seatCharts.couple.length > 0"
                          v-for="(items, rowIndex) in $store.state.seatInfo.seatCharts.couple"
                          :key="rowIndex">
-            <span :class="item.isSold == true ? 'seat  sold' :(columnIndex % 2 == 0) ?
+            <span :class="item.isSold == true ? (columnIndex % 2 == 0) ?'seat couplesold couple-left couplesold' : 'seat couplesold couple-right couplesold':(columnIndex % 2 == 0) ?
                   item.selected == true ? 'seat lover lover-left selected' : 'seat lover lover-left selectable':
                   item.selected == true ? 'seat lover lover-right selected' : 'seat lover lover-right selectable'"
                   v-for="(item, columnIndex) in items"
@@ -269,6 +269,18 @@
                             }
                             &.selected {
                                 background: url("../../assets/img/selected-seat.png") no-repeat;
+                            }
+                            &.couplesold {
+                                width: 35px;
+                                background: url("../../assets/img/couple-sold-seat.png") no-repeat;
+                                &.couple-left {
+                                    margin-right: 0;
+                                    background-position: 1px 0;
+                                }
+                                &.couple-right {
+                                    margin-left: 0;
+                                    background-position: -34px 0;
+                                }
                             }
                             &.lover {
                                 width: 35px;
