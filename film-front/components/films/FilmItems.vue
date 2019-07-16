@@ -3,8 +3,10 @@
         <ul class="film-items" v-if="$store.state.filmList.data && $store.state.filmList.data.length > 0">
             <li v-for="(film,index) in $store.state.filmList.data" :key="index" class="film-item">
                 <nuxt-link :to="{path:'/filmItem/'+film.filmId}" target="_blank">
-                    <img :src="'https://project4.oss-cn-beijing.aliyuncs.com/' + film.imgAddress " :alt="film.filmName"/>
-                    <span class="film-name">{{ film.filmName }}</span>
+                    <div class="film-item-div">
+                        <img  class="film-item-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/' + film.imgAddress " :alt="film.filmName"/>
+                    </div>
+                     <span class="film-name">{{ film.filmName }}</span>
                 </nuxt-link>
                 <span class="film-score">{{ film.filmScore }}</span>
             </li>
@@ -81,12 +83,20 @@
                 display: inline-block;
                 vertical-align: middle;
                 width: 160px;
-                height: 226px;
+                height: 300px;
                 margin: 30px 0 0 31px;
                 overflow: hidden;
                 a:visited {
                     color: #333;
                 }
+                .film-item-div {
+                    width: 100%;
+                    height: 226px;
+                }
+                    .film-item-img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 .film-name {
                     display: inline-block;
                     width: 100%;
