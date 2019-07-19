@@ -4,7 +4,7 @@
             <div class="swiper-container" v-if="homeBanner">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" v-for="(item, index) in homeBanner.banners" :key="index">
-                        <nuxt-link active-class="is-active" :to="{path: '//'+item.bannerUrl}"
+                        <nuxt-link active-class="is-active" to=""
                                    class="bk1"
                                    style="display:block;height: 100%;width: 100%;" exact>
                             <img :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.bannerAddress" alt="">

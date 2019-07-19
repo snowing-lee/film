@@ -2,7 +2,7 @@
     <div class="header">
         <div class="header-inner">
             <!-- <a href="" class="meeting-logo"></a> -->
-            <a href="" class="logo" data-act="icon-click" style="font: 30px/60px 'arial'; color: #ff6637">Meeting</a>
+            <a href="/" class="logo" data-act="icon-click" style="font: 30px/60px 'arial'; color: #ff6637">Meeting</a>
             <!--<div class="city-container">-->
             <!--<div class="city-selected">-->
             <!--<div class="city-name">-->

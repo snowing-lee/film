@@ -9,8 +9,7 @@
                     <div class="news-img">
                         <a href="/films/news/9615" target="_blank">
                             <!--<img class="news-img-default" src="//ms0.meituan.net/mywww/image/loading_2.e3d934bf.png">-->
-                            <img class="news-img-detail"
-                                 src="http://img.meetingshop.cn/films/imgs/81c618559f2d01913c8f0116d7644e2b4695454.jpg">
+                            <img class="news-img-detail" src="../../assets/img/news.png" >
                         </a>
                     </div>
                     <div class="news-main">
@@ -84,6 +83,8 @@
                     }
                     .news-img-detail {
                         width: 100%;
+                        height: 100%;
+                        border: 1px solid #7f828b;
                         top: 0;
                         left: 0;
                     }

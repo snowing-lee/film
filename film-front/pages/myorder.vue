@@ -27,7 +27,7 @@
 
                     <div class="order-body">
                         <div class="poster">
-                            <img width="100" height="95" :src=item.src>
+                            <img width="100" height="95" src="../assets/img/order-p.png">
                         </div>
 
                         <div class="order-content">

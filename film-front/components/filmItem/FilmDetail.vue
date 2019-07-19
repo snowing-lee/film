@@ -15,7 +15,7 @@
                             <h3>剧情简介</h3>
                         </div>
                         <div class="mod-content">
-                            <span class="dra">{{filmItem.data.info04.biography}}</span>
+                            <span class="dra">{{filmItem.data.info04.biopgraphy}}</span>
 
                         </div>
                     </div>
