@@ -42,7 +42,7 @@
                             <nuxt-link :to="{path:'/filmItem/'+top2.filmId}">
                                 <i class="ranking-index" style="color: #fff!important">2</i>
                                 <span class="img-link">
-                                    <img class="ranking-img default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+top2.imgAddress">
+                                    <img class="ranking-img default-img" :src="imgUrl+top2.imgAddress">
                                 </span>
                                 <div class="name-link ranking-movie-name">{{top2.filmName}}</div>
                                 <span class="ranking-num-info">
@@ -56,7 +56,7 @@
                             <nuxt-link :to="{path:'/filmItem/'+top3.filmId}">
                                 <i class="ranking-index" style="color: #fff!important">3</i>
                                 <span class="img-link">
-                                    <img class="ranking-img default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+top3.imgAddress">
+                                    <img class="ranking-img default-img" :src="imgUrl+top3.imgAddress">
                                 </span>
                                 <div class="name-link ranking-movie-name">{{top3.filmName}}</div>
 

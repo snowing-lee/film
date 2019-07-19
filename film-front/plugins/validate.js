@@ -59,3 +59,10 @@ Validator.extend('address', {
     return value != ''
   }
 });
+
+var imgUrl= {
+    install(Vue){
+        Vue.prototype.imgUrl =  "https://project4.oss-cn-beijing.aliyuncs.com/"
+    }
+}
+Vue.use(imgUrl);

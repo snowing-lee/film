@@ -4,7 +4,7 @@
             <li v-for="(film,index) in $store.state.filmList.data" :key="index" class="film-item">
                 <nuxt-link :to="{path:'/filmItem/'+film.filmId}" target="_blank">
                     <div class="film-item-div">
-                        <img  class="film-item-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/' + film.imgAddress " :alt="film.filmName"/>
+                        <img  class="film-item-img" :src="imgUrl+ film.imgAddress " :alt="film.filmName"/>
                     </div>
                      <span class="film-name">{{ film.filmName }}</span>
                 </nuxt-link>

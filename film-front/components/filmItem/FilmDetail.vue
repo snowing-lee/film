@@ -37,7 +37,7 @@
                                         <li class="celebrity ">
                                             <a href="javascript:;" target="_blank" class="portrait">
                                                 <img class="default-img"
-                                                 :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+filmItem.data.info04.actors.director.imgAddress">
+                                                 :src="imgUrl+filmItem.data.info04.actors.director.imgAddress">
                                             </a>
                                             <div class="info">
                                                 <a href="javascript:;" target="_blank" class="name">
@@ -58,7 +58,7 @@
                                         <li class="celebrity actor"
                                             v-for="(item, index) in filmItem.data.info04.actors.actors" :key="index">
                                             <a href="/films/celebrity/467008" target="_blank" class="portrait">
-                                                <img class="default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.imgAddress">
+                                                <img class="default-img" :src="imgUrl+item.imgAddress">
                                             </a>
                                             <div class="info">
                                                 <a href="/films/celebrity/467008" target="_blank" class="name">

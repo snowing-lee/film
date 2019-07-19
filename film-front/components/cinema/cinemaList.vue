@@ -4,7 +4,7 @@
             <div class="movie-list">
                 <div class="movie" :class="{active:tabShow==index}" v-for="(item, index) in cinemasItem.data.filmList"
                      :key="index" @click="tab(index)">
-                    <img class="movie-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.imgAddress" alt="">
+                    <img class="movie-img" :src="imgUrl+item.imgAddress" alt="">
                 </div>
             </div>
         </div>

@@ -17,9 +17,9 @@
                     <div class="movie-item">
                         <nuxt-link :to="{path:'/filmItem/'+item.filmId}" target="_blank">
                             <div class="movie-poster">
-                                <img class="poster-default" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.imgAddress">
+                                <img class="poster-default" :src="imgUrl+item.imgAddress">
                                 <div class="movie-div">
-                                    <img class="movie-item-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+item.imgAddress">
+                                    <img class="movie-item-img" :src="imgUrl+item.imgAddress">
                                 </div>
                                 <div class="movie-overlay movie-overlay-bg">
                                     <div class="movie-info">

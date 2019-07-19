@@ -3,7 +3,7 @@
         <div class="wrapper clearfix" v-if="cinemaBanner && cinemaBanner.data">
             <div class="cinema-left">
                 <div class="avatar-shadow">
-                    <img class="avatar" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+cinemaBanner.data.cinemaInfo.imgUrl">
+                    <img class="avatar" :src="imgUrl+cinemaBanner.data.cinemaInfo.imgUrl">
                     <!--<div class="avatar-num">查看全部50张图片</div>-->
                 </div>
             </div>

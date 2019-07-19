@@ -13,7 +13,7 @@
                             <nuxt-link :to="{path:'/filmItem/'+top.filmId}" target="_blank">
                                 <div class="ranking-top-left">
                                     <i class="ranking-top-icon"></i>
-                                    <img class="ranking-img  default-img" :src="'https://project4.oss-cn-beijing.aliyuncs.com/'+top.imgAddress">
+                                    <img class="ranking-img  default-img" :src="imgUrl+top.imgAddress">
                                 </div>
                                 <div class="ranking-top-right">
                                     <div class="ranking-top-right-main">
