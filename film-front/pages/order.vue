@@ -170,6 +170,7 @@
                                                     _this.showQrcode = false;
                                                 }
                                             } else if (res1.data.orderStatus == 1) {
+                                                this.showModal = true
                                                 if (res1.data.orderMsg) {
                                                     alert(res1.data.orderMsg);
                                                     _this.$router.push({path: '/myorder', query: {orderId: res.data.orderId, tryNums: _this.tryNums}});
@@ -181,7 +182,7 @@
                                             }
                                         }
                                     });
-                                }, 5000);
+                                }, 15000);
                             }
                         } else {
                             if (res.msg) {
