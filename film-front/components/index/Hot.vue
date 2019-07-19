@@ -98,7 +98,8 @@
                 .movie-list {
                     dd {
                         margin-top: 20px;
-                        margin-left: 30px;
+                        /*margin-left: 30px;*/
+                        margin-right: 20px;
                         display: inline-block;
                         vertical-align: top;
                         position: relative;

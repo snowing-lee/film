@@ -109,7 +109,7 @@
             .movie-list {
                 dd {
                     margin-top: 15px;
-                    margin-left: 15px;
+                    margin-right: 7px;
                     display: inline-block;
                     vertical-align: top;
                     position: relative;
