@@ -26,6 +26,14 @@ export function fetch(config) {
         // 返回状态判断
         instance.interceptors.response.use(
             res => {
+                if (res && res.data.status==700) {
+                    alert("tonken过期!需要重新登录");
+                    Cookies.remove('token');
+                    Cookies.remove('username');
+                    Cookies.remove('cinemaNowPage');
+                    // _this.$router.push('/login');
+                    window.location.href = '/login';
+                }
                 return res.data
             },
             error => {
