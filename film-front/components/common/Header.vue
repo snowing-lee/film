@@ -28,6 +28,11 @@
                                    :class="{'is-active': active == '/cinemas'}" exact>影院
                         </nuxt-link>
                     </li>
+                    <li @click="tab('/seckill')">
+                        <nuxt-link :to="{path: '/seckill'}" class="link nav-item is-tab"
+                                   :class="{'is-active': active == '/seckill'}" exact>秒杀
+                        </nuxt-link>
+                    </li>
                     <!--<li @click="tab('/board')"><nuxt-link :to="{path: '/board'}" class="link nav-item is-tab" :class="{'is-active': active == '/board'}" exact>影院</nuxt-link></li>-->
                     <!--<li @click="tab('/news')"><nuxt-link :to="{path: '/news'}" class="link nav-item is-tab" :class="{'is-active': active == '/news'}" exact>影院</nuxt-link></li>-->
                 </ul>
